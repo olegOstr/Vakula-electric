@@ -1,0 +1,234 @@
+// Мобильное меню
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navList = document.querySelector('.nav-list');
+    const header = document.querySelector('.header');
+
+    if (mobileMenuBtn && navList) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navList.classList.toggle('active');
+            header.classList.toggle('menu-open');
+        });
+
+        // Закрытие мобильного меню при клике по ссылке
+        navList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navList.classList.remove('active');
+                header.classList.remove('menu-open');
+            });
+        });
+
+        // Закрытие мобильного меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-list') && !e.target.closest('.mobile-menu-btn')) {
+                mobileMenuBtn.classList.remove('active');
+                navList.classList.remove('active');
+                header.classList.remove('menu-open');
+            }
+        });
+    }
+});
+
+// Плавная прокрутка для якорных ссылок
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerOffset = 80; // Высота шапки
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Анимация появления элементов при прокрутке
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+    observer.observe(element);
+});
+
+// Обработка форм
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Валидация формы
+        const isValid = validateForm(form);
+        if (!isValid) return;
+
+        // Сбор данных формы
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            // Здесь будет отправка данных на сервер
+            console.log('Form data:', data);
+            showNotification('success', 'Форма успешно отправлена!');
+            form.reset();
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            showNotification('error', 'Произошла ошибка при отправке формы.');
+        }
+    });
+});
+
+// Валидация формы
+function validateForm(form) {
+    let isValid = true;
+    const inputs = form.querySelectorAll('input, textarea');
+
+    inputs.forEach(input => {
+        if (input.hasAttribute('required') && !input.value.trim()) {
+            isValid = false;
+            showError(input, 'Это поле обязательно для заполнения');
+        } else if (input.type === 'email' && input.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(input.value)) {
+                isValid = false;
+                showError(input, 'Введите корректный email адрес');
+            }
+        }
+    });
+
+    return isValid;
+}
+
+// Показ ошибки валидации
+function showError(input, message) {
+    const errorDiv = input.nextElementSibling?.classList.contains('error-message')
+        ? input.nextElementSibling
+        : document.createElement('div');
+
+    if (!input.nextElementSibling?.classList.contains('error-message')) {
+        errorDiv.classList.add('error-message');
+        input.parentNode.insertBefore(errorDiv, input.nextSibling);
+    }
+
+    errorDiv.textContent = message;
+    input.classList.add('error');
+
+    input.addEventListener('input', function removeError() {
+        input.classList.remove('error');
+        errorDiv.remove();
+        input.removeEventListener('input', removeError);
+    });
+}
+
+// Показ уведомлений
+function showNotification(type, message) {
+    const notification = document.createElement('div');
+    notification.classList.add('notification', type);
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+
+    // Удаление уведомления через 3 секунды
+    setTimeout(() => {
+        notification.classList.add('fade-out');
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// Ленивая загрузка изображений
+document.addEventListener('DOMContentLoaded', () => {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
+});
+
+// Кнопка возврата наверх
+const scrollToTopButton = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollToTopButton.classList.add('visible');
+    } else {
+        scrollToTopButton.classList.remove('visible');
+    }
+});
+
+scrollToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Инициализация слайдера
+const swiper = new Swiper('.swiper-container', {
+    effect: 'creative',
+    creativeEffect: {
+        prev: {
+            translate: ['-100%', 0, 0],
+            rotate: [0, -180, 0],
+            origin: 'left center'
+        },
+        next: {
+            translate: ['100%', 0, 0],
+            rotate: [0, 0, 0],
+            origin: 'right center'
+        }
+    },
+    speed: 800,
+    grabCursor: true,
+    parallax: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    }
+});
+
+// Добавляем эффект параллакса для фона слайдов
+swiper.on('progress', function (progress) {
+    for (let i = 0; i < swiper.slides.length; i++) {
+        const slideProgress = swiper.slides[i].progress;
+        const innerOffset = swiper.width * 0.5;
+        const innerTranslate = slideProgress * innerOffset;
+
+        swiper.slides[i].querySelector('.slide-inner').style.transform =
+            `translate3d(${innerTranslate}px, 0, 0) scale(${1 - Math.abs(slideProgress * 0.1)})`;
+    }
+});
+
+swiper.on('touchStart', function () {
+    for (let i = 0; i < swiper.slides.length; i++) {
+        swiper.slides[i].style.transition = '';
+    }
+}); 

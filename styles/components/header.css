@@ -157,4 +157,41 @@
         font-size: 1.2rem;
         padding: var(--spacing-sm) var(--spacing-lg);
     }
+
+    .header-social {
+        display: none;
+    }
+}
+
+.header-social {
+    margin-left: var(--spacing-lg);
+}
+
+.header-social .social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.header-social .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    padding: 6px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.header-social .social-link:hover {
+    opacity: 1;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.header-social .social-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
 }

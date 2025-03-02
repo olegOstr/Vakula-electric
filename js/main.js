@@ -189,22 +189,9 @@ scrollToTopButton.addEventListener('click', () => {
 
 // Инициализация слайдера
 const swiper = new Swiper('.swiper-container', {
-    effect: 'creative',
-    creativeEffect: {
-        prev: {
-            translate: ['-100%', 0, 0],
-            rotate: [0, -180, 0],
-            origin: 'left center'
-        },
-        next: {
-            translate: ['100%', 0, 0],
-            rotate: [0, 0, 0],
-            origin: 'right center'
-        }
-    },
+    effect: 'slide',
     speed: 800,
-    grabCursor: true,
-    parallax: true,
+    loop: true,
     pagination: {
         el: '.swiper-pagination',
         clickable: true
@@ -212,8 +199,35 @@ const swiper = new Swiper('.swiper-container', {
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
+    },
+    on: {
+        init: function () {
+            updateProjectDescription(this.realIndex + 1);
+        },
+        slideChange: function () {
+            updateProjectDescription(this.realIndex + 1);
+        }
     }
 });
+
+// Функция обновления описания проекта
+function updateProjectDescription(projectId) {
+    // Скрываем все описания
+    document.querySelectorAll('.project-content').forEach(content => {
+        content.style.display = 'none';
+        content.classList.remove('active');
+    });
+
+    // Показываем нужное описание
+    const activeDescription = document.querySelector(`.project-content[data-project-id="${projectId}"]`);
+    if (activeDescription) {
+        activeDescription.style.display = 'block';
+        // Добавляем небольшую задержку перед добавлением класса active для анимации
+        setTimeout(() => {
+            activeDescription.classList.add('active');
+        }, 50);
+    }
+}
 
 // Добавляем эффект параллакса для фона слайдов
 swiper.on('progress', function (progress) {

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vakula Electric - Ваш надежный партнер в сфере электрооборудования">
-    <title>Vakula Electric - Главная</title>
+    <meta name="description" content="Vakula Electric - Your reliable partner in electrical equipment">
+    <title>Vakula Electric - Home</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/components/header.css">
     <link rel="stylesheet" href="/styles/components/footer.css">
@@ -20,12 +20,27 @@
                     <img src="/images/logo.svg" alt="Vakula Electric" width="150" height="50">
                 </a>
                 <ul class="nav-list">
-                    <li><a href="#hero">Главная</a></li>
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#about">О нас</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Our Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="mobile-menu-btn" aria-label="Открыть меню">
+                <div class="header-social">
+                    <div class="social-links">
+                        <a href="https://g.page/your-business" target="_blank" rel="noopener" class="social-link" aria-label="Google Reviews">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm0 4.92c1.599 0 3.028.688 4.033 1.783l-1.745 1.745c-.471-.471-1.277-.943-2.288-.943-1.961 0-3.559 1.632-3.559 3.559 0 1.961 1.598 3.559 3.559 3.559 2.264 0 3.115-1.645 3.245-2.492H12v-2.318h5.913c.058.343.104.686.104 1.135 0 3.576-2.394 6.117-6.017 6.117-3.512 0-6.36-2.848-6.36-6.36S8.488 4.92 12 4.92z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/your-number" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Open Menu">
                     <span></span>
                 </button>
             </nav>
@@ -34,28 +49,34 @@
 
     <main>
         <section id="hero" class="hero">
+            <div class="floating-elements">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
             <div class="hero-content">
-                <h1>Профессиональные решения в сфере электрооборудования</h1>
-                <p class="hero-text">Качественное оборудование и надежные услуги для вашего бизнеса</p>
-                <a href="#contact" class="btn btn-primary">Связаться с нами</a>
+                <h1>Professional Solutions in Electrical Equipment</h1>
+                <p class="hero-text">Quality equipment and reliable services for your business</p>
+                <a href="#contact" class="btn">Contact Us</a>
             </div>
         </section>
 
         <section id="services" class="services">
             <div class="container">
-                <h2>Наши услуги</h2>
+                <h2>Our Services</h2>
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="icon-industrial"></i>
                         </div>
-                        <h3>Промышленная автоматизация</h3>
-                        <p>Внедрение современных систем автоматизации производства, установка и настройка ПЛК, SCADA-систем</p>
+                        <h3>Industrial Automation</h3>
+                        <p>Implementation of modern production automation systems, installation and configuration of PLC, SCADA systems</p>
                         <ul class="service-list">
-                            <li>Проектирование систем автоматизации</li>
-                            <li>Установка и программирование ПЛК</li>
-                            <li>Интеграция SCADA-систем</li>
-                            <li>Модернизация существующих систем</li>
+                            <li>Automation system design</li>
+                            <li>PLC installation and programming</li>
+                            <li>SCADA system integration</li>
+                            <li>Existing system modernization</li>
                         </ul>
                     </div>
 
@@ -63,13 +84,13 @@
                         <div class="service-icon">
                             <i class="icon-energy"></i>
                         </div>
-                        <h3>Энергоаудит и энергосбережение</h3>
-                        <p>Комплексное обследование энергосистем и разработка решений по повышению энергоэффективности</p>
+                        <h3>Energy Audit and Conservation</h3>
+                        <p>Comprehensive inspection of energy systems and development of energy efficiency solutions</p>
                         <ul class="service-list">
-                            <li>Энергетическое обследование</li>
-                            <li>Тепловизионный контроль</li>
-                            <li>Разработка программ энергосбережения</li>
-                            <li>Внедрение энергоэффективных технологий</li>
+                            <li>Energy inspection</li>
+                            <li>Thermal imaging control</li>
+                            <li>Energy conservation program development</li>
+                            <li>Energy-efficient technology implementation</li>
                         </ul>
                     </div>
 
@@ -77,13 +98,13 @@
                         <div class="service-icon">
                             <i class="icon-lightning"></i>
                         </div>
-                        <h3>Электромонтажные работы</h3>
-                        <p>Полный спектр электромонтажных работ любой сложности для промышленных и коммерческих объектов</p>
+                        <h3>Electrical Installation</h3>
+                        <p>Full range of electrical installation work of any complexity for industrial and commercial facilities</p>
                         <ul class="service-list">
-                            <li>Монтаж силового оборудования</li>
-                            <li>Прокладка кабельных линий</li>
-                            <li>Установка щитового оборудования</li>
-                            <li>Системы освещения</li>
+                            <li>Power equipment installation</li>
+                            <li>Cable line laying</li>
+                            <li>Switchboard equipment installation</li>
+                            <li>Lighting systems</li>
                         </ul>
                     </div>
 
@@ -91,13 +112,13 @@
                         <div class="service-icon">
                             <i class="icon-settings"></i>
                         </div>
-                        <h3>Техническое обслуживание</h3>
-                        <p>Регулярное обслуживание и ремонт электрооборудования для обеспечения бесперебойной работы</p>
+                        <h3>Technical Maintenance</h3>
+                        <p>Regular maintenance and repair of electrical equipment to ensure uninterrupted operation</p>
                         <ul class="service-list">
-                            <li>Плановое ТО электроустановок</li>
-                            <li>Диагностика неисправностей</li>
-                            <li>Аварийный ремонт</li>
-                            <li>Модернизация оборудования</li>
+                            <li>Scheduled maintenance of electrical installations</li>
+                            <li>Fault diagnostics</li>
+                            <li>Emergency repairs</li>
+                            <li>Equipment modernization</li>
                         </ul>
                     </div>
 
@@ -105,13 +126,13 @@
                         <div class="service-icon">
                             <i class="icon-shield"></i>
                         </div>
-                        <h3>Системы безопасности</h3>
-                        <p>Проектирование и установка современных систем безопасности и контроля доступа</p>
+                        <h3>Security Systems</h3>
+                        <p>Design and installation of modern security and access control systems</p>
                         <ul class="service-list">
-                            <li>Видеонаблюдение</li>
-                            <li>Системы контроля доступа</li>
-                            <li>Пожарная сигнализация</li>
-                            <li>Охранные системы</li>
+                            <li>Video surveillance</li>
+                            <li>Access control systems</li>
+                            <li>Fire alarm systems</li>
+                            <li>Security systems</li>
                         </ul>
                     </div>
 
@@ -119,48 +140,48 @@
                         <div class="service-icon">
                             <i class="icon-project"></i>
                         </div>
-                        <h3>Проектирование и консалтинг</h3>
-                        <p>Разработка проектной документации и консультации по электротехническим решениям</p>
+                        <h3>Design and Consulting</h3>
+                        <p>Development of project documentation and consulting on electrical engineering solutions</p>
                         <ul class="service-list">
-                            <li>Разработка электропроектов</li>
-                            <li>Технический консалтинг</li>
-                            <li>Экспертиза проектов</li>
-                            <li>Согласование документации</li>
+                            <li>Electrical project development</li>
+                            <li>Technical consulting</li>
+                            <li>Project expertise</li>
+                            <li>Documentation approval</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="slider-section">
+        <section id="projects" class="slider-section">
             <div class="container">
-                <h2>Наши проекты</h2>
+                <h2>Our Projects</h2>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="slide-inner">
-                                <img src="https://dummyimage.com/1200x800/2C3E50/ffffff&text=Промышленная+автоматизация" alt="Промышленная автоматизация" class="slide-bg">
+                                <img src="https://dummyimage.com/1200x800/2C3E50/ffffff&text=Industrial+Automation" alt="Industrial Automation" class="slide-bg">
                                 <div class="slide-content">
-                                    <h3>Промышленная автоматизация</h3>
-                                    <p>Внедрение современных систем управления производством</p>
+                                    <h3>Industrial Automation</h3>
+                                    <p>Implementation of modern production management systems</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-inner">
-                                <img src="https://dummyimage.com/1200x800/27AE60/ffffff&text=Энергоэффективные+решения" alt="Энергоэффективные решения" class="slide-bg">
+                                <img src="https://dummyimage.com/1200x800/27AE60/ffffff&text=Energy+Efficient+Solutions" alt="Energy Efficient Solutions" class="slide-bg">
                                 <div class="slide-content">
-                                    <h3>Энергоэффективные решения</h3>
-                                    <p>Модернизация систем энергоснабжения</p>
+                                    <h3>Energy Efficient Solutions</h3>
+                                    <p>Modernization of power supply systems</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-inner">
-                                <img src="https://dummyimage.com/1200x800/8E44AD/ffffff&text=Системы+безопасности" alt="Системы безопасности" class="slide-bg">
+                                <img src="https://dummyimage.com/1200x800/8E44AD/ffffff&text=Security+Systems" alt="Security Systems" class="slide-bg">
                                 <div class="slide-content">
-                                    <h3>Системы безопасности</h3>
-                                    <p>Комплексные решения для защиты объектов</p>
+                                    <h3>Security Systems</h3>
+                                    <p>Comprehensive solutions for facility protection</p>
                                 </div>
                             </div>
                         </div>
@@ -174,23 +195,23 @@
 
         <section id="about" class="about-preview">
             <div class="container">
-                <h2>О компании</h2>
-                <p>Мы специализируемся на поставке и обслуживании электрооборудования высокого качества. Наша команда профессионалов обеспечивает качественный монтаж и обслуживание любой сложности.</p>
+                <h2>About Company</h2>
+                <p>We specialize in the supply and maintenance of high-quality electrical equipment. Our team of professionals provides quality installation and maintenance of any complexity.</p>
                 <div class="about-features">
                     <div class="feature">
                         <i class="icon-experience"></i>
-                        <h3>10+ лет опыта</h3>
-                        <p>Успешно реализованные проекты различной сложности</p>
+                        <h3>10+ Years Experience</h3>
+                        <p>Successfully implemented projects of various complexity</p>
                     </div>
                     <div class="feature">
                         <i class="icon-team"></i>
-                        <h3>Профессиональная команда</h3>
-                        <p>Сертифицированные специалисты с богатым опытом</p>
+                        <h3>Professional Team</h3>
+                        <p>Certified specialists with extensive experience</p>
                     </div>
                     <div class="feature">
                         <i class="icon-quality"></i>
-                        <h3>Гарантия качества</h3>
-                        <p>Используем только проверенное оборудование</p>
+                        <h3>Quality Guarantee</h3>
+                        <p>We use only proven equipment</p>
                     </div>
                 </div>
             </div>
@@ -200,18 +221,18 @@
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-details">
-                        <h2>Наши контакты</h2>
+                        <h2>Our Contacts</h2>
                         <div class="contact-item">
                             <i class="icon-location"></i>
                             <div>
-                                <h3>Адрес</h3>
-                                <p>ул. Примерная, 123<br>г. Москва, 123456</p>
+                                <h3>Address</h3>
+                                <p>1234 Wilshire Blvd<br>Los Angeles, CA 90017</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="icon-phone"></i>
                             <div>
-                                <h3>Телефон</h3>
+                                <h3>Phone</h3>
                                 <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
                             </div>
                         </div>
@@ -225,17 +246,17 @@
                         <div class="contact-item">
                             <i class="icon-clock"></i>
                             <div>
-                                <h3>Режим работы</h3>
-                                <p>Пн-Пт: 9:00 - 18:00<br>Сб-Вс: Выходной</p>
+                                <h3>Working Hours</h3>
+                                <p>Mon-Fri: 9:00 AM - 6:00 PM<br>Sat-Sun: Closed</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="contact-form-container">
-                        <h2>Напишите нам</h2>
+                        <h2>Write to Us</h2>
                         <form id="contactForm" class="contact-form">
                             <div class="form-group">
-                                <label for="name">Ваше имя *</label>
+                                <label for="name">Your Name *</label>
                                 <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
@@ -243,18 +264,18 @@
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Телефон</label>
+                                <label for="phone">Phone</label>
                                 <input type="tel" id="phone" name="phone">
                             </div>
                             <div class="form-group">
-                                <label for="subject">Тема</label>
+                                <label for="subject">Subject</label>
                                 <input type="text" id="subject" name="subject">
                             </div>
                             <div class="form-group">
-                                <label for="message">Сообщение *</label>
+                                <label for="message">Message *</label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -266,38 +287,59 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-info">
-                    <img src="/images/logo.svg" alt="Vakula Electric" width="120" height="40">
-                    <p>Ваш надежный партнер в сфере электрооборудования</p>
+                    <img src="/images/logo.svg" alt="Vakula Electric" width="120" height="40" class="footer-logo">
+                    <p>Your reliable partner in electrical equipment</p>
                 </div>
                 <div class="footer-contacts">
-                    <h3>Контакты</h3>
+                    <h3>Contacts</h3>
                     <ul>
                         <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
                         <li><a href="mailto:info@vakula-electric.com">info@vakula-electric.com</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h3>Навигация</h3>
+                    <h3>Navigation</h3>
                     <ul>
-                        <li><a href="#services">Услуги</a></li>
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#contact">Контакты</a></li>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Our Projects</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Social Media</h3>
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://g.page/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Reviews">
+                                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81Z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.26-2.83-1.26-4.38 0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28z"/>
+                                </svg>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Vakula Electric. Все права защищены.</p>
+                <p>&copy; 2024 Vakula Electric. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <button class="scroll-to-top" aria-label="Прокрутить наверх">
+    <button class="scroll-to-top" aria-label="Scroll to top">
         <svg viewBox="0 0 24 24">
             <path d="M18 15l-6-6-6 6"/>
         </svg>
     </button>
 
-    <!-- Подключаем Swiper JS -->
+    <!-- Include Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/js/main.js"></script>

@@ -245,4 +245,30 @@ swiper.on('touchStart', function () {
     for (let i = 0; i < swiper.slides.length; i++) {
         swiper.slides[i].style.transition = '';
     }
+});
+
+// Fade in sections on scroll
+function handleScrollAnimation() {
+    const sections = document.querySelectorAll('.services, .slider-section, .about-preview, .contact-section');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, {
+        threshold: 0.15 // Trigger when 15% of the section is visible
+    });
+
+    sections.forEach(section => {
+        section.classList.add('fade-in-section');
+        observer.observe(section);
+    });
+}
+
+// Initialize scroll animations
+document.addEventListener('DOMContentLoaded', () => {
+    handleScrollAnimation();
 }); 

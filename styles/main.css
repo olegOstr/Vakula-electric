@@ -12,8 +12,8 @@
     --border-color: #E0E0E0;
 
     /* Типография */
-    --font-main: 'Arial', sans-serif;
-    --font-heading: 'Roboto', sans-serif;
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Inter', sans-serif;
 
     /* Размеры */
     --container-width: 1200px;

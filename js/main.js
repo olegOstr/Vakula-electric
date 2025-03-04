@@ -37,7 +37,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const headerOffset = 80; // Высота шапки
+            const header = document.querySelector('.header');
+            const isHeaderHidden = header.classList.contains('header-hidden');
+            const headerOffset = isHeaderHidden ? 0 : 80; // Учитываем высоту шапки только если она видима
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -271,4 +273,30 @@ function handleScrollAnimation() {
 // Initialize scroll animations
 document.addEventListener('DOMContentLoaded', () => {
     handleScrollAnimation();
+});
+
+// Header scroll behavior
+let lastScrollTop = 0;
+const header = document.querySelector('.header');
+const scrollThreshold = 50; // минимальное расстояние скролла для срабатывания
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Показываем шапку если скролл меньше threshold
+    if (currentScroll < scrollThreshold) {
+        header.classList.remove('header-hidden');
+        return;
+    }
+
+    // Определяем направление скролла
+    if (currentScroll > lastScrollTop) {
+        // Скролл вниз
+        header.classList.add('header-hidden');
+    } else {
+        // Скролл вверх
+        header.classList.remove('header-hidden');
+    }
+
+    lastScrollTop = currentScroll;
 }); 

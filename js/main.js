@@ -85,11 +85,11 @@ document.querySelectorAll('form').forEach(form => {
         try {
             // Здесь будет отправка данных на сервер
             console.log('Form data:', data);
-            showNotification('success', 'Форма успешно отправлена!');
+            showNotification('success', 'Message sent successfully!');
             form.reset();
         } catch (error) {
             console.error('Error submitting form:', error);
-            showNotification('error', 'Произошла ошибка при отправке формы.');
+            showNotification('error', 'An error occurred while sending the message.');
         }
     });
 });
@@ -102,12 +102,12 @@ function validateForm(form) {
     inputs.forEach(input => {
         if (input.hasAttribute('required') && !input.value.trim()) {
             isValid = false;
-            showError(input, 'Это поле обязательно для заполнения');
+            showError(input, 'This field is required');
         } else if (input.type === 'email' && input.value) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(input.value)) {
                 isValid = false;
-                showError(input, 'Введите корректный email адрес');
+                showError(input, 'Please enter a valid email address');
             }
         }
     });

@@ -877,28 +877,6 @@
     transition: transform 0.8s ease;
 }
 
-.slide-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: #ffffff;
-}
-
-.slide-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-}
-
-.slide-content p {
-    font-size: 1rem;
-    margin: 0;
-    opacity: 0.9;
-}
-
 /* Навигация слайдера */
 .swiper-button-next,
 .swiper-button-prev {

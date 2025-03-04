@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vakula Electric - Your reliable partner in electrical equipment">
     <title>Vakula Electric - Home</title>
+    
+    <!-- Preload fonts for critical text -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"></noscript>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./images/logo.svg" as="image">
+    <link rel="preload" href="./styles/main.css" as="style">
+    <link rel="preload" href="./styles/components/header.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/components/header.css">
     <link rel="stylesheet" href="./styles/components/footer.css">
@@ -20,7 +34,7 @@
         <div class="container">
             <nav class="main-nav">
                 <a href="#hero" class="logo">
-                    <img src="./images/logo.svg" alt="Vakula Electric" width="150" height="50">
+                    <img src="./images/logo.svg" alt="Vakula Electric" width="150" height="50" fetchpriority="high">
                 </a>
                 <ul class="nav-list">
                     <li><a href="#hero">Home</a></li>
@@ -152,29 +166,29 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="slide-inner">
-                                <img src="https://dummyimage.com/1200x800/2C3E50/ffffff&text=Industrial+Automation" alt="Industrial Automation" class="slide-bg">
-                                <div class="slide-content">
-                                    <h3>Industrial Automation</h3>
-                                    <p>Implementation of modern production management systems</p>
-                                </div>
+                                <img src="https://dummyimage.com/1200x800/2C3E50/ffffff&text=Industrial+Automation" 
+                                    alt="Industrial Automation" 
+                                    class="slide-bg"
+                                    loading="lazy"
+                                    decoding="async">
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-inner">
-                                <img src="https://dummyimage.com/1200x800/27AE60/ffffff&text=Energy+Efficient+Solutions" alt="Energy Efficient Solutions" class="slide-bg">
-                                <div class="slide-content">
-                                    <h3>Energy Efficient Solutions</h3>
-                                    <p>Modernization of power supply systems</p>
-                                </div>
+                                <img src="https://dummyimage.com/1200x800/27AE60/ffffff&text=Energy+Efficient+Solutions" 
+                                    alt="Energy Efficient Solutions" 
+                                    class="slide-bg"
+                                    loading="lazy"
+                                    decoding="async">
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-inner">
-                                <img src="https://dummyimage.com/1200x800/8E44AD/ffffff&text=Security+Systems" alt="Security Systems" class="slide-bg">
-                                <div class="slide-content">
-                                    <h3>Security Systems</h3>
-                                    <p>Comprehensive solutions for facility protection</p>
-                                </div>
+                                <img src="https://dummyimage.com/1200x800/8E44AD/ffffff&text=Security+Systems" 
+                                    alt="Security Systems" 
+                                    class="slide-bg"
+                                    loading="lazy"
+                                    decoding="async">
                             </div>
                         </div>
                     </div>
@@ -331,9 +345,9 @@
         </svg>
     </button>
 
-    <!-- Include Swiper JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <!-- Defer non-critical resources -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </body>
 </html> 

@@ -1,3 +1,15 @@
+// Preloader
+document.addEventListener('DOMContentLoaded', () => {
+    const preloader = document.querySelector('.preloader');
+    
+    // Скрываем прелоадер после загрузки всех ресурсов
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 500); // Небольшая задержка для плавности
+    });
+});
+
 // Мобильное меню
 document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -299,4 +311,17 @@ window.addEventListener('scroll', () => {
     }
 
     lastScrollTop = currentScroll;
+});
+
+// Обработка кнопки "Показать больше"
+document.addEventListener('DOMContentLoaded', () => {
+    const showMoreBtn = document.querySelector('.show-more-btn');
+    const servicesGrid = document.querySelector('.services-grid');
+
+    if (showMoreBtn && servicesGrid) {
+        showMoreBtn.addEventListener('click', () => {
+            servicesGrid.classList.add('expanded');
+            showMoreBtn.style.display = 'none';
+        });
+    }
 }); 

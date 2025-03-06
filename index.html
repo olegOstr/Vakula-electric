@@ -100,6 +100,7 @@
     <link rel="preload" href="./fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./styles/main.css" as="style">
     <link rel="preload" href="./styles/components/header.css" as="style">
+    <link rel="preload" href="./images/hero-bg.webp" as="image" type="image/webp">
     
     <!-- Styles -->
     <link rel="stylesheet" href="./styles/fonts.css">
@@ -111,6 +112,18 @@
     <link rel="stylesheet" href="./styles/pages/contact.css">
 </head>
 <body>
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-wrapper">
+                <div class="preloader-spinner"></div>
+                <div class="preloader-icon">
+                    <svg viewBox="0 0 24 24" width="40" height="40">
+                        <path fill="currentColor" d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="header">
         <div class="container">
             <nav class="main-nav">
@@ -132,7 +145,7 @@
     </header>
 
     <main>
-        <section id="hero" class="hero">
+        <section id="hero" class="hero" fetchpriority="high">
             <div class="floating-elements">
                 <div class="floating-element"></div>
                 <div class="floating-element"></div>
@@ -155,15 +168,71 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-bolt"></i>
+                            <i class="fas fa-tachometer-alt"></i>
                         </div>
-                        <h3>Emergency Power</h3>
-                        <p>Protect Yourself from Unexpected Outages. Our 24/7 emergency power solutions ensure your home or business stays operational during critical situations.</p>
+                        <h3>Panel Upgrades</h3>
+                        <p>Any type. Any difficulty. Professional panel upgrades to meet modern electrical demands and safety standards.</p>
                         <ul class="service-list">
-                            <li>24/7 Emergency Response</li>
-                            <li>Backup Generator Installation</li>
-                            <li>Power Restoration Services</li>
-                            <li>Emergency Circuit Repair</li>
+                            <li>Load Calculation</li>
+                            <li>Safety Inspection</li>
+                            <li>Code Compliance</li>
+                            <li>Future-Proofing</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3>Landscape Lights</h3>
+                        <p>Light Up Your Home in Style. Transform your outdoor space with professionally installed landscape lighting.</p>
+                        <ul class="service-list">
+                            <li>Custom Design</li>
+                            <li>LED Solutions</li>
+                            <li>Motion Sensors</li>
+                            <li>Smart Controls</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-charging-station"></i>
+                        </div>
+                        <h3>EV Chargers</h3>
+                        <p>Convenient Charging at Home. Professional installation of electric vehicle charging stations.</p>
+                        <ul class="service-list">
+                            <li>Fast Charging</li>
+                            <li>Smart Features</li>
+                            <li>Load Management</li>
+                            <li>Safety Compliance</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Wiring</h3>
+                        <p>A piece of mind with a new wires and secured connections. Professional wiring services for your home or business.</p>
+                        <ul class="service-list">
+                            <li>New Installation</li>
+                            <li>Repairs</li>
+                            <li>Safety Checks</li>
+                            <li>Code Updates</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Surge Protector</h3>
+                        <p>Whole House SP to protect your electronic and appliances. Comprehensive surge protection solutions.</p>
+                        <ul class="service-list">
+                            <li>Whole House Protection</li>
+                            <li>Equipment Safety</li>
+                            <li>Monitoring Systems</li>
+                            <li>Maintenance</li>
                         </ul>
                     </div>
 
@@ -171,27 +240,13 @@
                         <div class="service-icon">
                             <i class="fas fa-search"></i>
                         </div>
-                        <h3>Inspections</h3>
-                        <p>Ensure Your Safety, Prevent Electrical Issues. Our thorough inspections identify potential hazards before they become problems.</p>
+                        <h3>Troubleshooting</h3>
+                        <p>Let's find a problem and fix it in professional way. Expert diagnostic and repair services.</p>
                         <ul class="service-list">
-                            <li>Complete System Assessment</li>
-                            <li>Safety Code Compliance</li>
-                            <li>Preventive Maintenance</li>
-                            <li>Detailed Reports</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-sun"></i>
-                        </div>
-                        <h3>Recessed Lights</h3>
-                        <p>Bright Up Your Living Space With Modern Lights. Transform your space with professionally installed recessed lighting.</p>
-                        <ul class="service-list">
-                            <li>Custom Layout Design</li>
-                            <li>LED Solutions</li>
-                            <li>Dimmer Installation</li>
-                            <li>Energy-Efficient Options</li>
+                            <li>Problem Diagnosis</li>
+                            <li>Quick Response</li>
+                            <li>Expert Solutions</li>
+                            <li>Preventive Care</li>
                         </ul>
                     </div>
 
@@ -199,27 +254,69 @@
                         <div class="service-icon">
                             <i class="fas fa-plug"></i>
                         </div>
-                        <h3>240V Lines</h3>
-                        <p>New Wire run for Your Appliances, EV and more. Professional installation of high-capacity electrical lines for your modern power needs.</p>
+                        <h3>GFCI Installation</h3>
+                        <p>Up to Code receptacles for maximum protection. Professional GFCI installation and testing.</p>
                         <ul class="service-list">
-                            <li>EV Charging Stations</li>
-                            <li>Heavy Appliance Circuits</li>
-                            <li>Code-Compliant Installation</li>
-                            <li>Capacity Planning</li>
+                            <li>Code Compliance</li>
+                            <li>Safety Testing</li>
+                            <li>Regular Maintenance</li>
+                            <li>Upgrade Options</li>
                         </ul>
                     </div>
 
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-fan"></i>
+                        </div>
+                        <h3>Ceiling Fans Install</h3>
+                        <p>Feel The Cool Breeze in Your Home. Expert ceiling fan installation and repair services.</p>
+                        <ul class="service-list">
+                            <li>Professional Installation</li>
+                            <li>Remote Controls</li>
+                            <li>Smart Integration</li>
+                            <li>Maintenance</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-smoke"></i>
+                        </div>
+                        <h3>Smoke Detectors</h3>
+                        <p>Make The Safety Your #1 Priority. Professional smoke detector installation and maintenance.</p>
+                        <ul class="service-list">
+                            <li>Code Compliance</li>
+                            <li>Regular Testing</li>
+                            <li>Battery Replacement</li>
+                            <li>Smart Integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>240V Lines</h3>
+                        <p>New Wire run for Your Appliances, EV and more. Professional installation of high-voltage circuits.</p>
+                        <ul class="service-list">
+                            <li>EV Charging</li>
+                            <li>Appliance Circuits</li>
+                            <li>Safety Compliance</li>
+                            <li>Load Management</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
                         </div>
                         <h3>Light Fixtures</h3>
-                        <p>Any Type, Weight and Style. We Got It All Covered. Expert installation of all lighting fixtures, from elegant chandeliers to modern LED systems.</p>
+                        <p>Any Type, Weight and Style. We Got It All Covered. Expert light fixture installation services.</p>
                         <ul class="service-list">
-                            <li>Chandelier Installation</li>
-                            <li>Outdoor Lighting</li>
-                            <li>Smart Lighting Systems</li>
-                            <li>Custom Solutions</li>
+                            <li>Custom Installation</li>
+                            <li>Smart Controls</li>
+                            <li>Style Selection</li>
+                            <li>Maintenance</li>
                         </ul>
                     </div>
 
@@ -228,15 +325,16 @@
                             <i class="fas fa-home"></i>
                         </div>
                         <h3>House Rewiring</h3>
-                        <p>Ensure That Your Wires Updated And Safe. Complete home rewiring services to modernize your electrical system.</p>
+                        <p>Ensure That Your Wires Updated And Safe. Complete home rewiring services for modern safety standards.</p>
                         <ul class="service-list">
                             <li>Complete System Upgrade</li>
-                            <li>Modern Safety Standards</li>
-                            <li>Minimal Disruption</li>
-                            <li>Future-Proof Solutions</li>
+                            <li>Safety Standards</li>
+                            <li>Code Compliance</li>
+                            <li>Future-Proofing</li>
                         </ul>
                     </div>
                 </div>
+                <button class="show-more-btn">Show More</button>
             </div>
         </section>
 

@@ -149,6 +149,38 @@
     content: "\f015";
 }
 
+.fa-tachometer-alt:before {
+    content: "\f3fd";
+}
+
+.fa-tree:before {
+    content: "\f1bb";
+}
+
+.fa-charging-station:before {
+    content: "\f5e7";
+}
+
+.fa-network-wired:before {
+    content: "\f6ff";
+}
+
+.fa-shield-alt:before {
+    content: "\f3ed";
+}
+
+.fa-fan:before {
+    content: "\f863";
+}
+
+.fa-smoke:before {
+    content: "\f760";
+}
+
+.fa-lightbulb:before {
+    content: "\f0eb";
+}
+
 /* Font Face */
 @font-face {
     font-family: 'Font Awesome 6 Free';

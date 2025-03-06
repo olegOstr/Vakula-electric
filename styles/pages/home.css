@@ -9,6 +9,36 @@
     transition: background-color 0.3s ease;
 }
 
+/* Стили для заголовков секций */
+.services h2,
+.slider-section h2,
+.about-preview h2,
+.contact-section h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #022640 0%, #5786AB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    position: relative;
+}
+
+.services h2::after,
+.slider-section h2::after,
+.about-preview h2::after,
+.contact-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transform: none;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #5786AB, transparent);
+}
+
 /* Hero секция */
 .hero {
     min-height: 100vh;
@@ -200,7 +230,7 @@
             50% 100%,
             35% 55%,
             0% 55%);
-    background: linear-gradient(135deg, rgba(0, 122, 255, 0.6) 0%, rgba(0, 194, 255, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(2, 38, 64, 0.6) 0%, rgba(87, 134, 171, 0.3) 100%);
     filter: drop-shadow(0 0 8px rgba(0, 122, 255, 0.3));
     animation: float 20s linear infinite;
 }
@@ -314,25 +344,6 @@
     background: linear-gradient(to bottom right, transparent 49%, #ffffff 50%);
 }
 
-.services h2 {
-    text-align: center;
-    margin-bottom: 4rem;
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    position: relative;
-    display: inline-block;
-}
-
-.services h2::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 0;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), transparent);
-}
-
 .services .container {
     display: flex;
     flex-direction: column;
@@ -401,7 +412,7 @@
 
 .service-icon i {
     font-size: 2.5rem;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #00C2FF 100%);
+    background: linear-gradient(135deg, #022640 0%, #5786AB 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -422,7 +433,7 @@
     left: 0;
     width: 40px;
     height: 3px;
-    background: var(--color-primary);
+    background: linear-gradient(90deg, #5786AB, transparent);
     transition: width 0.3s ease;
 }
 
@@ -460,7 +471,7 @@
     content: "→";
     position: absolute;
     left: 0;
-    color: var(--color-primary);
+    color: #5786AB;
 }
 
 /* Секция продуктов */
@@ -515,7 +526,7 @@
 .about-preview {
     padding: 120px 0;
     text-align: center;
-    background: linear-gradient(135deg, #001F4D 0%, #000B1C 100%);
+    background: linear-gradient(135deg, #000B1C 0%, #001F4D 100%);
     color: #ffffff;
     position: relative;
 }
@@ -527,15 +538,17 @@
     left: 0;
     width: 100%;
     height: 100px;
-    background: linear-gradient(to bottom right, transparent 49%, #001F4D 50%);
+    background: linear-gradient(to bottom right, transparent 49%, #000B1C 50%);
 }
 
 .about-preview h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #ffffff;
     position: relative;
     display: inline-block;
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .about-preview h2::after {
@@ -543,9 +556,10 @@
     position: absolute;
     bottom: -15px;
     left: 0;
+    transform: none;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #007AFF, transparent);
+    background: linear-gradient(90deg, #5786AB, transparent);
 }
 
 .about-preview p {
@@ -578,7 +592,7 @@
 
 .feature i {
     font-size: 3rem;
-    color: var(--color-primary);
+    color: #5786AB;
     margin-bottom: 1.5rem;
     display: inline-block;
 }
@@ -629,13 +643,7 @@
 
 .contact-details h2::after,
 .contact-form-container h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-primary), transparent);
+    display: none;
 }
 
 .contact-item {
@@ -655,7 +663,7 @@
 
 .contact-item i {
     font-size: 2rem;
-    color: var(--color-primary);
+    color: #5786AB;
     margin-right: 1.5rem;
 }
 
@@ -673,7 +681,7 @@
 }
 
 .contact-item a:hover {
-    color: var(--color-primary);
+    color: #5786AB;
 }
 
 .contact-form {
@@ -712,7 +720,7 @@
 }
 
 .contact-form .btn {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #00C2FF 100%);
+    background: linear-gradient(135deg, #022640 0%, #5786AB 100%);
     color: #ffffff;
     padding: 1rem 2.5rem;
     border: none;
@@ -728,7 +736,7 @@
 .contact-form .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 122, 255, 0.2);
-    background: linear-gradient(135deg, var(--color-primary) 0%, #00A3FF 100%);
+    background: linear-gradient(135deg, #022640 0%, #5786AB 100%);
 }
 
 @media (max-width: 992px) {
@@ -822,9 +830,10 @@
     position: absolute;
     bottom: -15px;
     left: 0;
+    transform: none;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #007AFF, transparent);
+    background: linear-gradient(90deg, #5786AB, transparent);
 }
 
 .projects-layout {
@@ -1043,9 +1052,10 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    transform: none;
     width: 40px;
     height: 3px;
-    background: linear-gradient(90deg, #007AFF, transparent);
+    background: linear-gradient(90deg, #5786AB, transparent);
 }
 
 .footer-links {
@@ -1078,14 +1088,14 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    color: #007AFF;
+    color: #5786AB;
     font-size: 0.9rem;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #007AFF;
+    color: #5786AB;
     transform: translateX(5px);
 }
 
@@ -1133,8 +1143,8 @@
 
     .footer-nav-group h3::after,
     .footer h3::after {
-        left: 0;
-        transform: none;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -1152,9 +1162,10 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    transform: none;
     width: 40px;
     height: 3px;
-    background: linear-gradient(90deg, #007AFF, transparent);
+    background: linear-gradient(90deg, #5786AB, transparent);
 }
 
 .footer-bottom {
@@ -1188,7 +1199,7 @@
 }
 
 .social-links a:hover {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #00C2FF 100%);
+    background: linear-gradient(135deg, #022640 0%, #5786AB 100%);
     transform: translateY(-3px);
 }
 
@@ -1227,7 +1238,7 @@
 
 .contact-info i {
     margin-right: 10px;
-    color: var(--color-primary);
+    color: #5786AB;
 }
 
 .footer-nav-group+.footer-nav-group {

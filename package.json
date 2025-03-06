@@ -1,0 +1,24 @@
+{
+  "name": "vakula-electric",
+  "version": "1.0.0",
+  "description": "Корпоративный сайт компании Vakula Electric, специализирующейся на поставке и обслуживании электрооборудования.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "convert-images": "node convert-images.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olegOstr/Vakula-electric.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olegOstr/Vakula-electric/issues"
+  },
+  "homepage": "https://github.com/olegOstr/Vakula-electric#readme",
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

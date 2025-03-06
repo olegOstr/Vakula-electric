@@ -110,6 +110,10 @@
     <link rel="stylesheet" href="./styles/components/icons.css">
     <link rel="stylesheet" href="./styles/pages/home.css">
     <link rel="stylesheet" href="./styles/pages/contact.css">
+
+    <!-- Defer non-critical resources -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" media="print" onload="this.media='all'">
 </head>
 <body>
     <div class="preloader">
@@ -166,7 +170,7 @@
             <div class="container">
                 <h2>Our Services</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="panel-gallery" href="./images/services/panel1.webp">
                         <div class="service-icon">
                             <i class="fas fa-tachometer-alt"></i>
                         </div>
@@ -178,9 +182,14 @@
                             <li>Code Compliance</li>
                             <li>Future-Proofing</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/panel1.webp" data-fancybox="panel-gallery"></a>
+                            <a href="./images/services/panel2.webp" data-fancybox="panel-gallery"></a>
+                            <a href="./images/services/panel3.webp" data-fancybox="panel-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="landscape-gallery" href="./images/services/landscape1.webp">
                         <div class="service-icon">
                             <i class="fas fa-tree"></i>
                         </div>
@@ -192,9 +201,14 @@
                             <li>Motion Sensors</li>
                             <li>Smart Controls</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/landscape1.webp" data-fancybox="landscape-gallery"></a>
+                            <a href="./images/services/landscape2.webp" data-fancybox="landscape-gallery"></a>
+                            <a href="./images/services/landscape3.webp" data-fancybox="landscape-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="ev-gallery" href="./images/services/ev1.webp">
                         <div class="service-icon">
                             <i class="fas fa-charging-station"></i>
                         </div>
@@ -206,9 +220,14 @@
                             <li>Load Management</li>
                             <li>Safety Compliance</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/ev1.webp" data-fancybox="ev-gallery"></a>
+                            <a href="./images/services/ev2.webp" data-fancybox="ev-gallery"></a>
+                            <a href="./images/services/ev3.webp" data-fancybox="ev-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="wiring-gallery" href="./images/services/wiring1.webp">
                         <div class="service-icon">
                             <i class="fas fa-network-wired"></i>
                         </div>
@@ -220,9 +239,14 @@
                             <li>Safety Checks</li>
                             <li>Code Updates</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/wiring1.webp" data-fancybox="wiring-gallery"></a>
+                            <a href="./images/services/wiring2.webp" data-fancybox="wiring-gallery"></a>
+                            <a href="./images/services/wiring3.webp" data-fancybox="wiring-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="surge-gallery" href="./images/services/surge1.webp">
                         <div class="service-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
@@ -234,9 +258,14 @@
                             <li>Monitoring Systems</li>
                             <li>Maintenance</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/surge1.webp" data-fancybox="surge-gallery"></a>
+                            <a href="./images/services/surge2.webp" data-fancybox="surge-gallery"></a>
+                            <a href="./images/services/surge3.webp" data-fancybox="surge-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="troubleshooting-gallery" href="./images/services/troubleshooting1.webp">
                         <div class="service-icon">
                             <i class="fas fa-search"></i>
                         </div>
@@ -248,9 +277,14 @@
                             <li>Expert Solutions</li>
                             <li>Preventive Care</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/troubleshooting1.webp" data-fancybox="troubleshooting-gallery"></a>
+                            <a href="./images/services/troubleshooting2.webp" data-fancybox="troubleshooting-gallery"></a>
+                            <a href="./images/services/troubleshooting3.webp" data-fancybox="troubleshooting-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="gfci-gallery" href="./images/services/gfci1.webp">
                         <div class="service-icon">
                             <i class="fas fa-plug"></i>
                         </div>
@@ -262,9 +296,14 @@
                             <li>Regular Maintenance</li>
                             <li>Upgrade Options</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/gfci1.webp" data-fancybox="gfci-gallery"></a>
+                            <a href="./images/services/gfci2.webp" data-fancybox="gfci-gallery"></a>
+                            <a href="./images/services/gfci3.webp" data-fancybox="gfci-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="fan-gallery" href="./images/services/fan1.webp">
                         <div class="service-icon">
                             <i class="fas fa-fan"></i>
                         </div>
@@ -276,9 +315,14 @@
                             <li>Smart Integration</li>
                             <li>Maintenance</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/fan1.webp" data-fancybox="fan-gallery"></a>
+                            <a href="./images/services/fan2.webp" data-fancybox="fan-gallery"></a>
+                            <a href="./images/services/fan3.webp" data-fancybox="fan-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="smoke-gallery" href="./images/services/smoke1.webp">
                         <div class="service-icon">
                             <i class="fas fa-smoke"></i>
                         </div>
@@ -290,9 +334,14 @@
                             <li>Battery Replacement</li>
                             <li>Smart Integration</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/smoke1.webp" data-fancybox="smoke-gallery"></a>
+                            <a href="./images/services/smoke2.webp" data-fancybox="smoke-gallery"></a>
+                            <a href="./images/services/smoke3.webp" data-fancybox="smoke-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="240v-gallery" href="./images/services/240v1.webp">
                         <div class="service-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
@@ -304,9 +353,14 @@
                             <li>Safety Compliance</li>
                             <li>Load Management</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/240v1.webp" data-fancybox="240v-gallery"></a>
+                            <a href="./images/services/240v2.webp" data-fancybox="240v-gallery"></a>
+                            <a href="./images/services/240v3.webp" data-fancybox="240v-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="light-gallery" href="./images/services/light1.webp">
                         <div class="service-icon">
                             <i class="fas fa-lightbulb"></i>
                         </div>
@@ -318,9 +372,14 @@
                             <li>Style Selection</li>
                             <li>Maintenance</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/light1.webp" data-fancybox="light-gallery"></a>
+                            <a href="./images/services/light2.webp" data-fancybox="light-gallery"></a>
+                            <a href="./images/services/light3.webp" data-fancybox="light-gallery"></a>
+                        </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-fancybox="rewiring-gallery" href="./images/services/rewiring1.webp">
                         <div class="service-icon">
                             <i class="fas fa-home"></i>
                         </div>
@@ -332,48 +391,65 @@
                             <li>Code Compliance</li>
                             <li>Future-Proofing</li>
                         </ul>
+                        <div style="display: none;">
+                            <a href="./images/services/rewiring1.webp" data-fancybox="rewiring-gallery"></a>
+                            <a href="./images/services/rewiring2.webp" data-fancybox="rewiring-gallery"></a>
+                            <a href="./images/services/rewiring3.webp" data-fancybox="rewiring-gallery"></a>
+                        </div>
                     </div>
                 </div>
                 <button class="show-more-btn">Show More</button>
             </div>
         </section>
 
-        <section id="projects" class="slider-section">
+        <section id="projects" class="projects-section">
             <div class="container">
-                <h2>Our Projects</h2>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <img src="./images/project2.webp" 
-                                    alt="Industrial Automation" 
-                                    class="slide-bg"
-                                    loading="lazy"
-                                    decoding="async">
-                            </div>
+                <h2>Work gallery</h2>
+                <div class="gallery-grid">
+                    <a href="./images/project1.webp" data-fancybox="gallery" class="gallery-item">
+                        <img src="./images/project1.webp" alt="Project 1" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon">+</span>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <img src="./images/project1.webp" 
-                                    alt="Energy Efficient Solutions" 
-                                    class="slide-bg"
-                                    loading="lazy"
-                                    decoding="async">
-                            </div>
+                    </a>
+                    <a href="./images/project2.webp" data-fancybox="gallery" class="gallery-item">
+                        <img src="./images/project2.webp" alt="Project 2" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon">+</span>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <img src="./images/project3.webp" 
-                                    alt="Security Systems" 
-                                    class="slide-bg"
-                                    loading="lazy"
-                                    decoding="async">
-                            </div>
+                    </a>
+                    <a href="./images/project3.webp" data-fancybox="gallery" class="gallery-item">
+                        <img src="./images/project3.webp" alt="Project 3" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon">+</span>
                         </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    </a>
+                    <a href="./images/project1.webp" data-fancybox="gallery" class="gallery-item">
+                        <img src="./images/project1.webp" alt="Project 4" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon">+</span>
+                        </div>
+                    </a>
+                    <a href="./images/project2.webp" data-fancybox="gallery" class="gallery-item">
+                        <img src="./images/project2.webp" alt="Project 5" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon">+</span>
+                        </div>
+                    </a>
+                    <a href="./images/project3.webp" data-fancybox="gallery" class="gallery-item">
+                        <img src="./images/project3.webp" alt="Project 6" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon">+</span>
+                        </div>
+                    </a>
+                </div>
+                <div style="display: none;">
+                    <a href="./images/project1.webp" data-fancybox="gallery"></a>
+                    <a href="./images/project2.webp" data-fancybox="gallery"></a>
+                    <a href="./images/project3.webp" data-fancybox="gallery"></a>
+                    <a href="./images/project1.webp" data-fancybox="gallery"></a>
+                    <a href="./images/project2.webp" data-fancybox="gallery"></a>
+                    <a href="./images/project3.webp" data-fancybox="gallery"></a>
                 </div>
             </div>
         </section>
@@ -525,8 +601,7 @@
     </button>
 
     <!-- Defer non-critical resources -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="./js/main.js" defer></script>
 </body>
 </html> 

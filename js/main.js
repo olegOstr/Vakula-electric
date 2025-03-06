@@ -1,17 +1,35 @@
-// Preloader
+// Инициализация Fancybox
 document.addEventListener('DOMContentLoaded', () => {
-    const preloader = document.querySelector('.preloader');
-    
-    // Скрываем прелоадер после загрузки всех ресурсов
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-        }, 500); // Небольшая задержка для плавности
-    });
-});
+    // Проверяем наличие Fancybox
+    if (typeof Fancybox !== 'undefined') {
+        Fancybox.bind('[data-fancybox]', {
+            // Опции Fancybox
+            loop: true,
+            buttons: [
+                'zoom',
+                'slideShow',
+                'fullScreen',
+                'close'
+            ],
+            animationEffect: 'fade',
+            transitionEffect: 'fade',
+            preventCaptionOverlap: true,
+            arrows: true,
+            infobar: true,
+            toolbar: true,
+            click: null,
+            clickSlide: false,
+            mobile: {
+                click: null,
+                clickSlide: false,
+                dblclick: null,
+                dblclickSlide: false,
+                swipe: 'slide'
+            }
+        });
+    }
 
-// Мобильное меню
-document.addEventListener('DOMContentLoaded', () => {
+    // Инициализация мобильного меню
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navList = document.querySelector('.nav-list');
     const header = document.querySelector('.header');
@@ -41,6 +59,54 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Плавная прокрутка к секциям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Анимация появления элементов при скролле
+    handleScrollAnimation();
+
+    // Кнопка прокрутки вверх
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// Preloader
+document.addEventListener('DOMContentLoaded', () => {
+    const preloader = document.querySelector('.preloader');
+    
+    // Скрываем прелоадер после загрузки всех ресурсов
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 500); // Небольшая задержка для плавности
+    });
 });
 
 // Плавная прокрутка для якорных ссылок
@@ -183,47 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lazyImages.forEach(img => imageObserver.observe(img));
 });
 
-// Кнопка возврата наверх
-const scrollToTopButton = document.querySelector('.scroll-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollToTopButton.classList.add('visible');
-    } else {
-        scrollToTopButton.classList.remove('visible');
-    }
-});
-
-scrollToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Инициализация слайдера
-const swiper = new Swiper('.swiper-container', {
-    effect: 'slide',
-    speed: 800,
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-    },
-    on: {
-        init: function () {
-            updateProjectDescription(this.realIndex + 1);
-        },
-        slideChange: function () {
-            updateProjectDescription(this.realIndex + 1);
-        }
-    }
-});
-
 // Функция обновления описания проекта
 function updateProjectDescription(projectId) {
     // Скрываем все описания
@@ -243,27 +268,9 @@ function updateProjectDescription(projectId) {
     }
 }
 
-// Добавляем эффект параллакса для фона слайдов
-swiper.on('progress', function (progress) {
-    for (let i = 0; i < swiper.slides.length; i++) {
-        const slideProgress = swiper.slides[i].progress;
-        const innerOffset = swiper.width * 0.5;
-        const innerTranslate = slideProgress * innerOffset;
-
-        swiper.slides[i].querySelector('.slide-inner').style.transform =
-            `translate3d(${innerTranslate}px, 0, 0) scale(${1 - Math.abs(slideProgress * 0.1)})`;
-    }
-});
-
-swiper.on('touchStart', function () {
-    for (let i = 0; i < swiper.slides.length; i++) {
-        swiper.slides[i].style.transition = '';
-    }
-});
-
 // Fade in sections on scroll
 function handleScrollAnimation() {
-    const sections = document.querySelectorAll('.services, .slider-section, .about-preview, .contact-section');
+    const sections = document.querySelectorAll('.services, .projects-section, .about-preview, .contact-section');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -281,11 +288,6 @@ function handleScrollAnimation() {
         observer.observe(section);
     });
 }
-
-// Initialize scroll animations
-document.addEventListener('DOMContentLoaded', () => {
-    handleScrollAnimation();
-});
 
 // Header scroll behavior
 let lastScrollTop = 0;

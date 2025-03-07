@@ -20,6 +20,12 @@
     justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+    .main-nav {
+        height: 65px;
+    }
+}
+
 .logo {
     display: block;
     height: 50px;
@@ -134,10 +140,10 @@
 
     .nav-list {
         position: fixed;
-        top: var(--header-height);
+        top: 65px;
         left: 0;
         width: 100%;
-        height: calc(100vh - var(--header-height));
+        height: calc(100vh - 65px);
         background-color: var(--background-color);
         flex-direction: column;
         align-items: center;

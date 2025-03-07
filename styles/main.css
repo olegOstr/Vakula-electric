@@ -66,13 +66,14 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-heading);
+    font-family: 'Inter', sans-serif;
     margin-bottom: var(--spacing-md);
     color: var(--primary-color);
 }
 
 h1 {
     font-size: 2.5rem;
+    font-weight: bold;
 }
 
 h2 {

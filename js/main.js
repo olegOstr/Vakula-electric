@@ -1,5 +1,33 @@
-// Инициализация Fancybox
 document.addEventListener('DOMContentLoaded', () => {
+    // Инициализация маски для телефона
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    
+    phoneInputs.forEach(input => {
+        const maskOptions = {
+            mask: '+1 (000) 000-0000',
+            lazy: false
+        };
+        
+        const mask = IMask(input, maskOptions);
+        
+        // Добавляем placeholder
+        input.placeholder = '+1 (___) ___-____';
+        
+        // Добавляем обработчик фокуса
+        input.addEventListener('focus', () => {
+            if (!input.value) {
+                mask.value = '+1 ';
+            }
+        });
+        
+        // Добавляем обработчик потери фокуса
+        input.addEventListener('blur', () => {
+            if (input.value === '+1 ') {
+                mask.value = '';
+            }
+        });
+    });
+
     // Проверяем наличие Fancybox
     if (typeof Fancybox !== 'undefined') {
         Fancybox.bind('[data-fancybox]', {
@@ -59,24 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Плавная прокрутка к секциям
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Анимация появления элементов при скролле
-    handleScrollAnimation();
-
     // Кнопка прокрутки вверх
     const scrollToTopBtn = document.querySelector('.scroll-to-top');
     if (scrollToTopBtn) {
@@ -129,24 +139,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Анимация появления элементов при прокрутке
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.animate-on-scroll').forEach((element) => {
-    observer.observe(element);
+// Инициализация EmailJS
+document.addEventListener('DOMContentLoaded', () => {
+    // Инициализируем EmailJS с вашим публичным ключом
+    emailjs.init("YOUR_PUBLIC_KEY"); // Замените на ваш публичный ключ из EmailJS
 });
 
 // Обработка форм
@@ -163,8 +159,18 @@ document.querySelectorAll('form').forEach(form => {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            // Здесь будет отправка данных на сервер
-            console.log('Form data:', data);
+            // Отправляем email через EmailJS
+            await emailjs.send(
+                "YOUR_SERVICE_ID", // Замените на ID вашего сервиса из EmailJS
+                "YOUR_TEMPLATE_ID", // Замените на ID вашего шаблона из EmailJS
+                {
+                    from_name: data.name,
+                    from_email: data.email,
+                    message: data.message,
+                    phone: data.phone
+                }
+            );
+
             showNotification('success', 'Message sent successfully!');
             form.reset();
         } catch (error) {
@@ -249,56 +255,17 @@ document.addEventListener('DOMContentLoaded', () => {
     lazyImages.forEach(img => imageObserver.observe(img));
 });
 
-// Функция обновления описания проекта
-function updateProjectDescription(projectId) {
-    // Скрываем все описания
-    document.querySelectorAll('.project-content').forEach(content => {
-        content.style.display = 'none';
-        content.classList.remove('active');
-    });
-
-    // Показываем нужное описание
-    const activeDescription = document.querySelector(`.project-content[data-project-id="${projectId}"]`);
-    if (activeDescription) {
-        activeDescription.style.display = 'block';
-        // Добавляем небольшую задержку перед добавлением класса active для анимации
-        setTimeout(() => {
-            activeDescription.classList.add('active');
-        }, 50);
-    }
-}
-
-// Fade in sections on scroll
-function handleScrollAnimation() {
-    const sections = document.querySelectorAll('.services, .projects-section, .about-preview, .contact-section');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing once visible
-            }
-        });
-    }, {
-        threshold: 0.15 // Trigger when 15% of the section is visible
-    });
-
-    sections.forEach(section => {
-        section.classList.add('fade-in-section');
-        observer.observe(section);
-    });
-}
-
 // Header scroll behavior
 let lastScrollTop = 0;
 const header = document.querySelector('.header');
-const scrollThreshold = 50; // минимальное расстояние скролла для срабатывания
+const heroH1 = document.querySelector('.hero h1');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const heroH1Position = heroH1 ? heroH1.getBoundingClientRect().top + window.pageYOffset : 0;
 
-    // Показываем шапку если скролл меньше threshold
-    if (currentScroll < scrollThreshold) {
+    // Показываем шапку если скролл меньше позиции h1
+    if (currentScroll < heroH1Position) {
         header.classList.remove('header-hidden');
         return;
     }

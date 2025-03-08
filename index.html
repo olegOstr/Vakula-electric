@@ -23,12 +23,6 @@
     <meta property="og:site_name" content="Vakula Electric">
     <meta property="og:locale" content="en_US">
     
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Vakula Electric - Professional Electrical Services in Los Angeles">
-    <meta name="twitter:description" content="Professional electrical services in Los Angeles County. 24/7 emergency support, home rewiring, and lighting installation.">
-    <meta name="twitter:image" content="https://vakula-electric.com/images/twitter-card.jpg">
-    
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
@@ -96,20 +90,11 @@
     <meta name="msapplication-TileColor" content="#007AFF">
     <meta name="theme-color" content="#ffffff">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="./fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./styles/main.css" as="style">
-    <link rel="preload" href="./styles/components/header.css" as="style">
-    <link rel="preload" href="./images/hero-bg.webp" as="image" type="image/webp">
+    <!-- Development Styles (будут использоваться только при разработке) -->
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="./styles/fonts.css">
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/components/header.css">
-    <link rel="stylesheet" href="./styles/components/footer.css">
-    <link rel="stylesheet" href="./styles/components/icons.css">
-    <link rel="stylesheet" href="./styles/pages/home.css">
-    <link rel="stylesheet" href="./styles/pages/contact.css">
+    
+    <!-- Production Styles (будут использоваться только в продакшене) -->
+    <link rel="stylesheet" href="./css/main-bundle.css">
 
     <!-- Defer non-critical resources -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" media="print" onload="this.media='all'">
@@ -133,6 +118,9 @@
                 <a href="#hero" class="logo">
                     <img src="./images/logo.svg" alt="Vakula Electric" width="150" height="50" fetchpriority="high">
                 </a>
+                <button class="mobile-menu-btn" aria-label="Open Menu" aria-expanded="false">
+                    <span></span>
+                </button>
                 <ul class="nav-list">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#services">Services</a></li>
@@ -140,9 +128,6 @@
                     <li><a href="#projects">Our Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="mobile-menu-btn" aria-label="Open Menu">
-                    <span></span>
-                </button>
             </nav>
         </div>
     </header>
@@ -618,6 +603,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://unpkg.com/imask"></script>
-    <script src="./js/main.js" defer></script>
+    
+    <!-- Development Scripts (будут использоваться только при разработке) -->
+    
+    
+    <!-- Production Scripts (будут использоваться только в продакшене) -->
+    <script src="./js/bundle.min.js" defer></script>
 </body>
 </html> 
